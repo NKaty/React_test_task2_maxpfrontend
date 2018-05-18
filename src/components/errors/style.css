@@ -1,0 +1,16 @@
+.error-message {
+    background-color: #e99;
+    padding: 10px;
+    margin-top: 40px;
+}
+
+.error-message__btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.error-message__btn img {
+    vertical-align: bottom;
+}
