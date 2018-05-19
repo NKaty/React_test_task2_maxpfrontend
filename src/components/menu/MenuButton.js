@@ -5,7 +5,8 @@ import { logout } from '../../ac'
 import history from '../../history'
 
 class MenuButton extends Component {
-  handleClick = () => {
+  handleClick = (ev) => {
+    ev.preventDefault()
     const { isAuth, logout } = this.props
     if (isAuth) {
       logout()
