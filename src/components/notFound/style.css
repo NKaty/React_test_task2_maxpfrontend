@@ -1,0 +1,17 @@
+.not-found-page {
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.not-found-page__status {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.not-found-page__message {
+  font-size: 30px;
+  text-align: center;
+}

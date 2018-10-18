@@ -6,19 +6,19 @@ import PrivateRoute from './routes/PrivateRoute'
 import LoginRoute from './routes/LoginRoute'
 import NewsList from './components/newsList/NewsList'
 import Menu from './components/menu/Menu'
+import NotFound from './components/notFound/NotFound'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Menu />
-        {/*<GlobalError />*/}
         <Switch>
           <Redirect from="/" to="/login" exact />
           <LoginRoute path="/login" component={Login} />
           <Route path="/news" component={NewsList} />
           <PrivateRoute path="/profile" component={Profile} />
-          <Route render={() => <h1>Not found page</h1>} />
+          <Route component={NotFound} />
         </Switch>
       </div>
     )
