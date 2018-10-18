@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { login } from '../../ac'
 import Shield from '../common/Shield'
 import { authLoadingSelector } from '../../selectors'
+import withErrorHandler from '../../hoc/errors/withErrorHandler'
 
 import './style.css'
 
@@ -108,7 +109,9 @@ Login.propTypes = {
   location: PropTypes.object
 }
 
-export default connect(
-  mapStateToProps,
-  { login }
-)(Login)
+export default withErrorHandler(
+  connect(
+    mapStateToProps,
+    { login }
+  )(Login)
+)

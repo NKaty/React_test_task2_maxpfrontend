@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { newsListSelector, newsLoadingSelector } from '../../selectors'
 import { loadAllNews } from '../../ac/index'
+import withErrorHandler from '../../hoc/errors/withErrorHandler'
 
 import './style.css'
 
@@ -49,7 +50,9 @@ NewsList.propTypes = {
   fetchData: PropTypes.func
 }
 
-export default connect(
-  mapStateToProps,
-  { fetchData: loadAllNews }
-)(NewsList)
+export default withErrorHandler(
+  connect(
+    mapStateToProps,
+    { fetchData: loadAllNews }
+  )(NewsList)
+)

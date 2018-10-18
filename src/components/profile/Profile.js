@@ -9,6 +9,7 @@ import {
   profileSocialSelector,
   profileLoadingSelector
 } from '../../selectors'
+import withErrorHandler from '../../hoc/errors/withErrorHandler'
 
 import vk from './socialIcon/vk.png'
 import telegram from './socialIcon/telegram.png'
@@ -82,7 +83,9 @@ Profile.propTypes = {
   fetchData: PropTypes.func
 }
 
-export default connect(
-  mapStateToProps,
-  { fetchData: loadProfile }
-)(Profile)
+export default withErrorHandler(
+  connect(
+    mapStateToProps,
+    { fetchData: loadProfile }
+  )(Profile)
+)

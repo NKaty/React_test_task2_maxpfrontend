@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import Login from './components/login/Login'
-import GlobalError from './components/errors/GlobalError'
 import Profile from './components/profile/Profile'
 import PrivateRoute from './routes/PrivateRoute'
 import LoginRoute from './routes/LoginRoute'
@@ -13,7 +12,7 @@ class App extends Component {
     return (
       <div className="App">
         <Menu />
-        <GlobalError />
+        {/*<GlobalError />*/}
         <Switch>
           <Redirect from="/" to="/login" exact />
           <LoginRoute path="/login" component={Login} />
