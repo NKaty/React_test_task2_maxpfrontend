@@ -11,6 +11,10 @@
     margin-left: 10px;
 }
 
+.error-message__text {
+    margin-left: 10px;
+}
+
 .error-message__btn img {
     vertical-align: bottom;
 }

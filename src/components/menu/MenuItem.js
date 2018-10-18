@@ -4,8 +4,14 @@ import PropTypes from 'prop-types'
 
 function MenuItem({ to, children }) {
   return (
-    <div className='main-menu__item'>
-      <NavLink className='main-menu__item__link' to = {to} activeStyle = {{ color: '#ee7c45' }}>{children}</NavLink>
+    <div className="main-menu__item">
+      <NavLink
+        className="main-menu__item__link"
+        to={to}
+        activeStyle={{ color: '#ee7c45' }}
+      >
+        {children}
+      </NavLink>
     </div>
   )
 }

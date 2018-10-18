@@ -9,7 +9,7 @@ const NewsRecord = Record({
 })
 
 const ReducerRecord = Record({
-  entities: arrToMap([], NewsRecord), //на будущее, если захотим искать новости по id
+  entities: arrToMap([], NewsRecord),
   loading: false,
   loaded: false
 })
@@ -18,8 +18,7 @@ export default (newsState = new ReducerRecord(), action) => {
   const { type, response } = action
   switch (type) {
     case LOAD_ALL_NEWS + START:
-      return newsState
-        .set('loading', true)
+      return newsState.set('loading', true)
 
     case LOAD_ALL_NEWS + SUCCESS:
       return newsState
@@ -28,9 +27,7 @@ export default (newsState = new ReducerRecord(), action) => {
         .set('loaded', true)
 
     case LOAD_ALL_NEWS + FAIL:
-      return newsState
-        .set('loading', false)
-        .set('loaded', false)
+      return newsState.set('loading', false).set('loaded', false)
 
     default:
       return newsState

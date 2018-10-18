@@ -1,5 +1,5 @@
 import { LOAD_PROFILE, START, SUCCESS, FAIL } from '../constants'
-import { Record } from "immutable"
+import { Record } from 'immutable'
 
 const ProfileRecord = Record({
   city: null,
@@ -13,8 +13,7 @@ export default (profileState = new ProfileRecord(), action) => {
   const { type, response } = action
   switch (type) {
     case LOAD_PROFILE + START:
-      return new ProfileRecord()
-        .set('loading', true)
+      return new ProfileRecord().set('loading', true)
 
     case LOAD_PROFILE + SUCCESS:
       const social = [...response.data.social].sort((a, b) => {

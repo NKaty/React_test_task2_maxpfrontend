@@ -14,23 +14,23 @@ class NewsList extends Component {
     if (fetchData) fetchData()
   }
 
-  getAllNews () {
+  getAllNews() {
     const { allNews } = this.props
-    return allNews.map(news => <li className='news__item' key={news.id}>
-      <News news={news} />
-    </li>)
+    return allNews.map(news => (
+      <li className="news__item" key={news.id}>
+        <News news={news} />
+      </li>
+    ))
   }
 
-  render () {
+  render() {
     const { allNews, loading } = this.props
     if (loading) return <Loader />
     return (
-      <div className='news'>
-        <h1 className='news__title'>News</h1>
-        <ul className='news__list'>
-          {this.getAllNews()}
-        </ul>
-        <p className='news__total'>Всего новостей: {allNews.length}</p>
+      <div className="news">
+        <h1 className="news__title">News</h1>
+        <ul className="news__list">{this.getAllNews()}</ul>
+        <p className="news__total">Всего новостей: {allNews.length}</p>
       </div>
     )
   }
@@ -49,4 +49,7 @@ NewsList.propTypes = {
   fetchData: PropTypes.func
 }
 
-export default connect(mapStateToProps, { fetchData: loadAllNews })(NewsList)
+export default connect(
+  mapStateToProps,
+  { fetchData: loadAllNews }
+)(NewsList)

@@ -4,7 +4,7 @@ import './style.css'
 
 function Shield() {
   return (
-    <div className='shield'>
+    <div className="shield">
       <h1>Verification process...</h1>
     </div>
   )

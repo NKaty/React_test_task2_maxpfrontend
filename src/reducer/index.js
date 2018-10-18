@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import { routerReducer as router } from 'react-router-redux'
 import auth from './auth'
 import profile from './profile'
 import news from './news'
@@ -8,5 +9,6 @@ export default combineReducers({
   auth,
   error,
   profile,
-  news
+  news,
+  router
 })

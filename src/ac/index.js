@@ -1,18 +1,24 @@
-import { LOGIN, RESET_ERROR_MESSAGE, LOAD_PROFILE, LOAD_ALL_NEWS, LOGOUT } from '../constants'
+import {
+  LOGIN,
+  RESET_ERROR_MESSAGE,
+  LOAD_PROFILE,
+  LOAD_ALL_NEWS,
+  LOGOUT
+} from '../constants'
 import history from '../history'
 
-export function login (form, redirectTo) {
+export function login(form, redirectTo) {
   return {
     type: LOGIN,
     callAPI: {
-      callbackSuccess: function () {
-        if (redirectTo) history.push(redirectTo) //на будущее, если закрытых routes будет несколько, и захотим редиректить к тому, с котороого user пытался зайти
+      callbackSuccess: function() {
+        if (redirectTo) history.push(redirectTo)
         else history.push('/profile')
       },
-      endpoint: 'https://mysterious-reef-29460.herokuapp.com/api/v1/validate',
+      endpoint: '/validate',
       method: 'POST',
       headers: {
-        'Accept': 'application/json',
+        Accept: 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(form)
@@ -20,13 +26,13 @@ export function login (form, redirectTo) {
   }
 }
 
-export function resetErrorMessage () {
+export function resetErrorMessage() {
   return {
     type: RESET_ERROR_MESSAGE
   }
 }
 
-export function loadProfile () {
+export function loadProfile() {
   return (dispatch, getState) => {
     const loaded = getState().profile.loaded
     const loading = getState().profile.loading
@@ -38,14 +44,14 @@ export function loadProfile () {
     dispatch({
       type: LOAD_PROFILE,
       callAPI: {
-        endpoint: `https://mysterious-reef-29460.herokuapp.com/api/v1/user-info/${id}`,
+        endpoint: `/user-info/${id}`,
         method: 'GET'
       }
     })
   }
 }
 
-export function loadAllNews () {
+export function loadAllNews() {
   return (dispatch, getState) => {
     const loaded = getState().news.loaded
     const loading = getState().news.loading
@@ -55,23 +61,15 @@ export function loadAllNews () {
     dispatch({
       type: LOAD_ALL_NEWS,
       callAPI: {
-        endpoint: 'https://mysterious-reef-29460.herokuapp.com/api/v1/news',
+        endpoint: '/news',
         method: 'GET'
       }
     })
   }
 }
 
-export function logout () {
+export function logout() {
   return {
-    type: LOGOUT,
-    callAPI: {
-      endpoint: 'https://mysterious-reef-29460.herokuapp.com/api/v1/logout', // на будущее
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
-    }
+    type: LOGOUT
   }
 }

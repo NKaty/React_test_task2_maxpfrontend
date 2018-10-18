@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { resetErrorMessage } from '../../ac'
@@ -7,10 +7,10 @@ import errorsDictionary from './errorsDictionary'
 import dismiss from './delete.png'
 import './style.css'
 
-class GlobalError extends React.Component {
+class GlobalError extends Component {
   handleDismissClick = ev => {
-    this.props.resetErrorMessage()
     ev.preventDefault()
+    this.props.resetErrorMessage()
   }
   render() {
     const { errorMessage } = this.props
@@ -18,11 +18,15 @@ class GlobalError extends React.Component {
       return null
     }
     return (
-      <p className='error-message'>
-        <b>{errorsDictionary[errorMessage] || errorMessage}</b>
-        {' '}
-        <button className='error-message__btn' onClick={this.handleDismissClick}>
-          <img src={dismiss} alt="Dismiss"/>
+      <p className="error-message">
+        <b className="error-message__text">
+          {errorsDictionary[errorMessage] || errorMessage}
+        </b>
+        <button
+          className="error-message__btn"
+          onClick={this.handleDismissClick}
+        >
+          <img src={dismiss} alt="Dismiss" />
         </button>
       </p>
     )
@@ -41,7 +45,7 @@ GlobalError.propTypes = {
   resetErrorMessage: PropTypes.func
 }
 
-export default connect(mapStateToProps, { resetErrorMessage })(GlobalError)
-
-
-
+export default connect(
+  mapStateToProps,
+  { resetErrorMessage }
+)(GlobalError)
