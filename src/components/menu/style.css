@@ -1,35 +1,35 @@
 .main-menu {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .main-menu__item {
-    display: inline-block;
-    margin-right: 5px;
-    background-color: #F0F0F0;
+  display: inline-block;
+  margin-right: 5px;
+  background-color: #F0F0F0;
 }
 
 .main-menu__item__link {
-    padding: 10px;
-    display: block;
-    text-decoration: none;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
 }
 
 .main-menu__item__link:hover {
-    background-color: #e3e3e3;
+  background-color: #e3e3e3;
 }
 
 .main-menu__item__link:visited,
 .main-menu__item__link:link,
 .main-menu__item__link:active {
-    color: #2f2f2f;
+  color: #2f2f2f;
 }
 
 .main-menu__button {
-    padding: 10px;
-    background-color: #e3e3e3;
-    font-size: 16px;
-    border: none;
-    float: right;
-    cursor: pointer;
-    color: #2f2f2f;
+  padding: 10px;
+  background-color: #e3e3e3;
+  font-size: 16px;
+  border: none;
+  float: right;
+  cursor: pointer;
+  color: #2f2f2f;
 }

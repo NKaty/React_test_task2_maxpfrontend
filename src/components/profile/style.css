@@ -1,28 +1,28 @@
 .profile__item {
-    font-size: 20px;
-    font-weight: 600;
-    margin-top: 50px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 50px;
 }
 
 .profile__item span {
-    font-size: 16px;
-    font-weight: 400;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .profile__title {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .profile__social {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .profile__social__item {
-    display: inline-block;
+  display: inline-block;
 }
 
 .profile__social__item img {
-    height: 50px;
-    margin-right: 10px;
+  height: 50px;
+  margin-right: 10px;
 }
